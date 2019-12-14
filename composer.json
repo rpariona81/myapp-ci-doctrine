@@ -1,0 +1,17 @@
+{
+	"description" : "The CodeIgniter Application with Dcotrine",
+	"authors": [
+        {
+            "name": "Ronald Pariona",
+            "homepage": "https://github.com/kenjis/codeigniter-doctrine"
+        }
+    ],
+	"require": {
+		"php": ">=5.4.0",
+        "doctrine/orm": "~2.5",
+		"codeigniter/framework": "3.1.*"
+	},
+	"autoload": {
+        "classmap": [ "application/libraries/Doctrine.php" ]
+    }
+}
