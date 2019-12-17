@@ -9,7 +9,9 @@
 	"require": {
 		"php": ">=5.4.0",
         "doctrine/orm": "~2.5",
-		"codeigniter/framework": "3.1.*"
+		"codeigniter/framework": "3.1.*",
+		"symfony/serializer": "^5.0",
+		"symfony/property-access": "^5.0"
 	},
 	"autoload": {
         "classmap": [ "application/libraries/Doctrine.php" ]
