@@ -96,11 +96,11 @@ $query_builder = TRUE;
 );*/
 
 $db['default'] = array(
-	'dsn'	=> 'sqlite:../data/myapp-db-LARGE.sqlite',
+	'dsn'	=> 'sqlite:../data/myapp-db.sqlite',
 	'hostname' => 'localhost',
 	'username' => '',
 	'password' => '',
-	'database' => '../data/myapp-db-LARGE.sqlite',
+	'database' => '../data/myapp-db.sqlite',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
