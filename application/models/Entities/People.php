@@ -7,7 +7,8 @@
  * @Table(name="t_people")
  */
 
-class People{
+class People
+{
     /**
      * @Id()
      * @GeneratedValue()
@@ -26,32 +27,53 @@ class People{
      * @Column(type="string") 
      */
     protected $gender;
+    /** 
+     * @Column(type="date") 
+     */
+    protected $birthday;
 
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setFirstname($name){
-        $this->firstname=$name;
+    public function setFirstname($name)
+    {
+        $this->firstname = $name;
     }
 
-    public function getFirstname(){
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 
-    public function setLastname($name){
-        $this->lastname=$name;
+    public function setLastname($name)
+    {
+        $this->lastname = $name;
     }
 
-    public function getLastname(){
+    public function getLastname()
+    {
         return $this->lastname;
     }
 
-    public function setGender($name){
-        $this->gender=$name;
+    public function setGender($name)
+    {
+        $this->gender = $name;
     }
 
-    public function getGender(){
+    public function getGender()
+    {
         return $this->gender;
+    }
+
+    public function setBirthday($date)
+    {
+        $this->birthday = date_format($date, "Y-m-d");
+    }
+
+    public function getBirthday()
+    {
+        return date_format($this->birthday, "Y-m-d");
     }
 }
