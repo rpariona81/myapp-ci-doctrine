@@ -1,22 +1,29 @@
 <?php
 
-require_once(APPPATH."models/Entities/People.php");
+require_once(APPPATH . "models/Entities/People.php");
 
-class People_model extends CI_Model {
+class People_model extends CI_Model
+{
 
-    var $em;
-    
-    public function __construct() {
-        parent::__construct();
-        $this->em = $this->doctrine->em;
-    }
-   
+  var $em;
+
+  public function __construct()
+  {
+    parent::__construct();
+    $this->em = $this->doctrine->em;
+  }
+
   //--------------------------------   
-       
-  function get_people(){   
-     return $this->em->getRepository('People')->findAll();   
-  }   
- 
+
+  function get_people()
+  {
+    return $this->em->getRepository('People')->findAll();
+  }
+
   //------------------------------
- 
+  function new_people($post)
+  {
+    $this->em->persist($post);
+    $this->em->flush();
+  }
 }

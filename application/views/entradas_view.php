@@ -10,7 +10,7 @@
     <?php
 
         foreach($entradas as $entrada){
-                    echo '<b>'.$entrada->getId().'</b>: '.$entrada->getName().'</br>';
+                    echo '<b>'.$entrada->getId().'</b>: '.$entrada->getFirstname().'</br>';
         }
     ?>
 

@@ -34,6 +34,11 @@ class People
 
     protected $age;
 
+    public function setId($Id)
+    {
+        $this->id = $Id;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -71,17 +76,21 @@ class People
 
     public function setBirthday($date)
     {
-        $this->birthday = date_format($date, "Y-m-d");
+        $this->birthday = date_create($date);
     }
 
     public function getBirthday()
     {
-        return date_format($this->birthday, "Y-m-d");
+        if($this->birthday) return date_format($this->birthday, "Y-m-d");
     }
 
     public function getAge()
     {
-        $age = date_diff($this->birthday, date_create('now'))->y;
+        if($this->birthday){
+            $age = date_diff($this->birthday, date_create('now'))->y;
+         }else{
+            $age = NULL;
+         } 
         return $age;
     }
 }

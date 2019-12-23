@@ -94,7 +94,7 @@ $query_builder = TRUE;
 	'failover' => array(),
 	'save_queries' => TRUE
 );*/
-
+/*
 $db['default'] = array(
 	'dsn'	=> 'sqlite:../data/myapp-db.sqlite',
 	'hostname' => 'localhost',
@@ -116,3 +116,29 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+*/
+$db['default'] = array(
+	'dsn'	=> getenv('DB_DSN') ?? '',
+	'hostname' => getenv('DB_HOST') ?? '',
+	'port' => getenv('DB_PORT') ?? '',
+    'username' => getenv('DB_USERNAME') ?? '',
+    'password' => getenv('DB_PASSWORD') ?? '',
+    'database' => getenv('DB_DATABASE') ?? '',
+	'dbdriver' => getenv('DB_CONNECTION') ?? '',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	/*'char_set' => 'utf8',*/
+	'char_set' => 'utf8mb4',
+	/*'dbcollat' => 'utf8_general_ci',*/
+	'dbcollat' => 'utf8mb4_unicode_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+

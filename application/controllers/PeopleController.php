@@ -42,8 +42,18 @@ class PeopleController extends CI_Controller
     {
         $datos = $this->People_model->get_people();
         //$serializedPosts = $this->serializer->serialize($datos,'json');
-        echo jsonReponse($datos);
+        echo jsonReponse($datos,true);
         //echo $serializedPosts;
         //var_dump($datos);
     }
+
+    public function creaPeople()
+    {
+        $entrada = new People();
+        $entrada->setId(1000);
+        $entrada->setFirstname('Daría un día más');
+        //$entrada->setBirthday('1990-11-15');
+        $this->People_model->new_people($entrada);
+    }
 }
+

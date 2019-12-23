@@ -1,4 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -47,5 +49,13 @@ class PostController extends CI_Controller
         //echo json_encode(serialize($datos));
         echo $serializedPosts;
         //var_dump($datos);
+    }
+
+    public function creaEntradas()
+    {
+        $entrada = new Entradas();
+        $entrada->setId(10);
+        $entrada->setName('Demostración');
+        $this->Posts_model->new_entradas(utf8ize($entrada));
     }
 }

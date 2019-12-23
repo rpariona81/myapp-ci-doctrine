@@ -101,8 +101,18 @@ class Doctrine
                 'user'     => $db['username'],
                 'password' => $db['password'],
                 'host'     => $db['hostname'],
+                'port'     => $db['port'],
                 'dbname'   => $db['database'],
                 'charset'  => $db['char_set'],
+            ];
+        } elseif ($db['dbdriver'] === 'sqlsrv') {
+            $connectionOptions = [
+                'driver'   => $db['dbdriver'],
+                'user'     => $db['username'],
+                'password' => $db['password'],
+                'host'     => $db['hostname'],
+                'port'     => $db['port'],
+                'dbname'   => $db['database']
             ];
         } else {
             throw new Exception('Your Database Configuration is not confirmed by CodeIgniter Doctrine');

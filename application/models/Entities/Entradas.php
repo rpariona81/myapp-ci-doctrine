@@ -19,6 +19,10 @@ class Entradas{
      */
     protected $name;
 
+    public function setId($Id){
+        $this->id = $Id;
+    }
+
     public function getId(){
         return $this->id;
     }
